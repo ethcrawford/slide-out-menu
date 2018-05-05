@@ -1,12 +1,20 @@
 extends _base.pug
 block title
-  title Brunch
+  title Slide Out Menu
 block main
+  //- App Title
+  h1.heading.heading--clear.visually-hidden Slide Out Menu
   header.page-header
     .container
-      h1 Brunch
+      button.slide-out-menu-toggle.navbar__toggle.button.button--clear.button--outline Menu
+    //- Slide Out Menu
+    nav.menu.slide-out-menu
+      h2.heading.heading--clear.menu__title Navigation
+      button.button.button--clear.button--outline.menu__button.slide-out-menu__toggle Close
   main.main
     .container
   footer.page-footer
     .container
-      p.copyright &copy; Ethcrawford 2018
+      p.copyright
+        small &copy; Ethcrawford 2018
+  .slide-out-menu-overlay

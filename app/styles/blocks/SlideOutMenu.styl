@@ -1,0 +1,62 @@
+@import '../variables/_colors.styl'
+@import '../variables/_sizes.styl'
+@import '../mixins/_rem.styl'
+@import '../mixins/_media.styl'
+
+$slide-out-menu_z-index = 1050
+$slide-out-menu-overlay_z-index = 1040
+$slide-out-menu_bg-color = #26272d
+$menu_color = #fff
+
+.slide-out-menu
+  position: fixed
+  top: 0
+  left: rem(-300)
+  z-index: $slide-out-menu_z-index
+  overflow-y: auto
+  padding: rem(40)
+  width: rem(300)
+  height: 100%
+  background-color: $slide-out-menu_bg-color
+  transition: all .7s cubic-bezier(.545, 0, .05, 1)
+
+  +widerthan($media-lg)
+    left: rem(-380)
+    width: rem(380)
+
+  &--open
+    left: 0
+
+.slide-out-menu-overlay
+  display: none
+
+  &--active
+    position: fixed
+    top: 0
+    left: 0
+    z-index: $slide-out-menu-overlay_z-index
+    display: block
+    width: 100%
+    height: 100%
+
+.menu
+  &__title
+    margin-bottom: rem(20)
+    color: #fff
+
+  &__toggle
+    position: absolute
+    top: rem(40)
+    right: rem(40)
+    border-color: #fff
+    color: #fff
+
+  &__button
+    margin-bottom: rem(16)
+    border-color: #fff
+    color: #fff
+
+    &:hover, &:active
+      border-color: #fff
+      background-color: #fff
+      color: $base_color
